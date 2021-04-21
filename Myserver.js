@@ -1,7 +1,7 @@
 const http = require('http');
 const hostname = 'localhost';
 const port = 8000;
-const baseUrl = hostname + ":" + 8000;
+const baseUrl = 'http://' + ":" + port;
 
 function start() {
     function onRequest(req, res){
