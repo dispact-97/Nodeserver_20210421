@@ -6,4 +6,4 @@ let handle = {};
 handle['/'] = myHandler.start;
 handle['/hello'] = myHandler.hello;
 
-myServer.start(myRouter.route);
+myServer.start(myRouter.route, handle);
