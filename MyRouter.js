@@ -4,9 +4,10 @@ function route(pathname, handle, res){
         handle[pathname](res);
     }
     else{
-        console.log('No handler defined for' + pathname);
+        console.log('No handler for' + pathname);
+        let sBody = '404 Not Found';
         res.writeHead(200, {'Content-Type': 'text/html'});
-        res.write(sBody);
+        res.write(body);
         res.end();
     }
 }
