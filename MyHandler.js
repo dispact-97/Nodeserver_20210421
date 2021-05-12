@@ -36,13 +36,14 @@ function start(res) {
     }, 5000);
   }
 
-  function randomwait(res){
-    let waitTime = (Math.random()*10000.);
-    setTimeout(function() {}, 5000);
-    let body = 'Thank you for waiting for 5 seconds.' + waitTime +'ms.';
-    res.writeHead(200, { 'Content-Type': 'text/html', 'charset': 'UTF-8' });
-    res.write(body);
-    res.end();
+  function randomWait(res) {
+    let waitTime = Math.round(Math.random() * 10000);
+    setTimeout(function () {
+      let body = 'Thank you for waiting for ' + waitTime + ' ms.';
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      res.write(body);
+      res.end();
+    }, waitTime);
   }
 
   function htmlFile(res, file){
