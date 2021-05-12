@@ -7,5 +7,6 @@ handle['/'] = myHandler.start;
 handle['/hello'] = myHandler.hello;
 handle['/wait'] = myHandler.wait;
 handle['/randomwait'] = myHandler.randomwait;
+handle['/firsthtml'] = myHandler.firsthtml;
 
 myServer.start(myRouter.route, handle);
