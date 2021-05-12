@@ -1,5 +1,5 @@
 function start(res) {
-    let body = '<head><meta charset ='UTF-8'></head>'
+    let body = '<head><meta charset ="UTF-8"></head>'
     body += '<body><div>Hello, world! <br> I am in the cloud class.</div>';
     body += '<div><a href="hello">hello 페이지</a></div>'
     body += '<div><a href="wait">5초대기 페이지</a></div>'
