@@ -9,6 +9,7 @@ function start(res) {
     body += '<div><a href="randomwait">랜덤대기 페이지</a></div>'
     body += '<div><a href="firsthtml">html 읽는 페이지</a></div>'
     body += '<div><a href="/page">Handler 없이 "/page"로 매핑하는 페이지</a></div>'
+    body += '<div><a href="serverInfo">Server 정보를 표시하는 페이지</a></div>'
     body += '</body>'
     res.writeHead(200, { 'Content-Type': 'text/html', 'charset': 'UTF-8' });
     res.write(body);
@@ -51,7 +52,10 @@ function start(res) {
   }
   
   function serverInfo(res){
-    JSON.stringify(os.cpus());
+    info = JSON.stringify(os.cpus());
+    res.writeHead(200, { 'Content-Type': 'text/html'});
+    res.write(info);
+    res.end();
   }
 
 
