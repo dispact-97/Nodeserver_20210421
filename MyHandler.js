@@ -27,12 +27,13 @@ function start(res) {
     res.end();
   }
 
-  function wait(res){
-    setTimeout(function() {}, 5000);
-    let body = 'Thank you for waiting for 5 seconds.';
-    res.writeHead(200, { 'Content-Type': 'text/html', 'charset': 'UTF-8' });
-    res.write(body);
-    res.end();
+  function wait(res) {
+    setTimeout(function () {
+      let body = 'Thank you for waiting for 5 seconds.';
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      res.write(body);
+      res.end();
+    }, 5000);
   }
 
   function randomwait(res){
