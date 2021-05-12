@@ -12,7 +12,8 @@ function start(res) {
     body += '<div><a href="/page">Handler 없이 "/page"로 매핑하는 페이지</a></div>'
     body += '<div><a href="serverInfo">Server 정보를 표시하는 페이지</a></div>'
     body += '<div><a href="/form">Form 입력 페이지</a></div>'
-    body += '<div><a href="/nickname"nickname 입력 페이지</a></div>'
+    body += '<div><a href="/nickname">nickname 입력 페이지</a></div>'
+    body += '<div><a href="/people">JSON을 입력받아 사람 정보를 표시하는 페이지</a></div>'
     body += '</body>'
     res.writeHead(200, { 'Content-Type': 'text/html', 'charset': 'UTF-8' });
     res.write(body);
@@ -72,6 +73,15 @@ function start(res) {
   }
 
 
+  function people(res){
+    body = fs.readFileSync('people', 'utf-8');
+    obj = JSON.parse(str);
+    console.log(obj.name + ': ' + obj.house);
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.write(body);
+    res.end();
+  }
+
 
   exports.start = start;
   exports.hello = hello;
@@ -81,3 +91,4 @@ function start(res) {
   exports.htmlFile = htmlFile;
   exports.serverInfo = serverInfo;
   exports.nickname = nickname;
+  exports.people = peole;

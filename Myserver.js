@@ -10,11 +10,14 @@ function start(route, handle) {
     console.log('Request receive.');
     pathname = new url.URL(req.url, baseUrl).pathname;
     let postData = '';
+
     req.setEncoding('utf-8');
+    
     req.addListener('data', function (chunk) {
       postData += chunk;
       console.log('chunk:' + chunk);
     });
+
     req.addListener('end', function(){
       route(pathname, handle, res);
     })
