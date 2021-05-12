@@ -8,5 +8,6 @@ handle['/hello'] = myHandler.hello;
 handle['/wait'] = myHandler.wait;
 handle['/randomwait'] = myHandler.randomwait;
 handle['/firsthtml'] = myHandler.firsthtml;
+handle['/serverInfo'] = myHandler.serverInfo;
 
 myServer.start(myRouter.route, handle);

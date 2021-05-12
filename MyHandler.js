@@ -50,6 +50,10 @@ function start(res) {
     htmlFile(res, './firstHtml.html');
   }
   
+  function serverInfo(res){
+    JSON.stringify(os.cpus());
+  }
+
 
 
   exports.start = start;
@@ -58,3 +62,4 @@ function start(res) {
   exports.randomwait = randomwait;
   exports.firsthtml = firsthtml;
   exports.htmlFile = htmlFile;
+  exports.serverInfo = serverInfo;
