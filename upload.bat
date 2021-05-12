@@ -1,3 +1,3 @@
 git add --all
-git commit -m "[bug] My Router.js:8 => sBody is not defined.js"
+git commit -m "add wait page"
 git push -u origin master

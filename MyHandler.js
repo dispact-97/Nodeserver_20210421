@@ -1,6 +1,10 @@
 function start(res) {
-    let body = 'Hello, world! <br> I am in the cloud class.';
-    res.writeHead(200, { 'Content-Type': 'text/html' });
+    let body = '<head><meta charset ='UTF-8'></head>'
+    body += '<div>Hello, world! <br> I am in the cloud class.</div>';
+    body += '<div><a href="hello">hello 페이지</a></div>'
+    body += '<div><a href="wait">5초대기 페이지</a></div>'
+    body += '</body>'
+    res.writeHead(200, { 'Content-Type': 'text/html', 'charset': 'UTF-8' });
     res.write(body);
     res.end();
   }
@@ -11,6 +15,15 @@ function start(res) {
     res.write(body);
     res.end();
   }
+
+  function wait(res){
+    setTimeout(function() {}, 5000);
+    let body = 'Thank you for waiting for 5 seconds.';
+    res.writeHead(200, { 'Content-Type': 'text/html', 'charset': 'UTF-8' });
+    res.write(body);
+    res.end();
+  }
   
   exports.start = start;
   exports.hello = hello;
+  exports.wait = wait;
