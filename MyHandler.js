@@ -91,4 +91,4 @@ function start(res) {
   exports.htmlFile = htmlFile;
   exports.serverInfo = serverInfo;
   exports.nickname = nickname;
-  exports.people = peole;
+  exports.people = people;
