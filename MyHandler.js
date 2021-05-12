@@ -1,4 +1,5 @@
 const fs = require('fs');
+const myHandler = require('./MyHandler');
 
 function start(res) {
     let body = '<head><meta charset ="UTF-8"/></head>'
@@ -55,3 +56,4 @@ function start(res) {
   exports.wait = wait;
   exports.randomwait = randomwait;
   exports.firsthtml = firsthtml;
+  exports.htmlFile = htmlFile;
