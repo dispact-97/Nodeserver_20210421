@@ -73,10 +73,16 @@ function start(res) {
   }
 
 
-  function people(res){
-    body = fs.readFileSync('people', 'utf-8');
+  function people(res) {
+    str = fs.readFileSync('people.json', 'utf-8');
     obj = JSON.parse(str);
     console.log(obj.name + ': ' + obj.house);
+    body =
+      '<table><thead><tr><th>name</th><th>house</th></tr></thead><tbody><tr><td>' +
+      obj.name +
+      '</td><td>' +
+      obj.house +
+      '</td></tr></tbody></table>';
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.write(body);
     res.end();
